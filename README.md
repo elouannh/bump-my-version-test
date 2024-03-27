@@ -89,6 +89,16 @@ $ bump-my-version show-bump
 Ensuite, on récupère la valeur d'argument associé à la version souhaitée (par exemple, `major` pour passer en `1.0.0`).
 Par exemple, si on fait `bump-my-version bump pre_n`, la version sera `0.2.0-dev1`.
 
+## 4. Mettre à jour le `pyproject.toml`
+
+Si vous voulez mettre à jour le fichier `pyproject.toml`, il suffit d'ajouter ces lignes en bas de votre 
+`.bumpversion.toml` :
+
+```toml
+[[tool.bumpversion.files ]]
+filename = "pyproject.toml"
+```
+
 # Bravo, lecture terminée
 
 Normalement, tout devrait marcher (s'il manque des trucs, je rajouterai).
