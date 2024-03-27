@@ -27,3 +27,46 @@ bump-my-version bump <patch|minor|major>
 
 # Ajout des mots-clés de pre-release
 
+## 1. Mise à jour du parser
+
+Pour ajouter un support de pre-release, il faut mettre à jour le parser dans le fichier de configuration en ajoutant
+un regular expression plus poussé qui extrait les parties supplémentaires à notre version :
+
+```toml
+parse = """(?x)
+    (?P<major>0|[1-9]\\d*)\\.
+    (?P<minor>0|[1-9]\\d*)\\.
+    (?P<patch>0|[1-9]\\d*)
+    (?:
+        -                             # dash seperator for pre-release section
+        (?P<pre_l>[a-zA-Z-]+)         # pre-release label
+        (?P<pre_n>0|[1-9]\\d*)        # pre-release version number
+    )?                                # pre-release section is optional
+"""
+```
+
+## 2. Mise à jour du sérialiseur
+
+Ensuite, on modifie la façon dont c'est sérialisé en ajoutant la possible existence d'un mot-clé de pre-release à notre
+liste :
+
+```toml
+serialize = [
+    "{major}.{minor}.{patch}-{pre_l}{pre_n}",
+    "{major}.{minor}.{patch}",
+]
+```
+
+## 3. Ajout d'une configuration avec les mots-clés possibles
+
+On ajoute une configuration dans notre `.bumpversion.toml` permettant d'ajouter un des mots-clés définis :
+
+```toml
+[tool.bumpversion.parts.pre_l]
+values = ["dev", "rc", "final"]
+optional_value = "final"
+```
+
+Normalement, tout devrait marcher (s'il manque des trucs, je rajouterai).
+
+Voir le fichier README.md pour avoir un exemple complet.
