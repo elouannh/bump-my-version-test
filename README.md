@@ -69,7 +69,24 @@ optional_value = "final"
 
 ## 4. Versionner avec le pre-release en ajoutant un mot clé
 
+Il suffit de faire la commande :
 
+```bash
+bump-my-version show-bump
+```
+
+Pour voir la liste des "résultats" en fonction du mot-clé associé. Par exemple : 
+
+```
+$ bump-my-version show-bump
+0.2.0 ── bump ─┬─ major ─ 1.0.0
+               ├─ minor ─ 0.3.0
+               ├─ patch ─ 0.2.1
+               ├─ pre_l ─ 0.2.0-rc0
+               ╰─ pre_n ─ 0.2.0-dev1
+```
+
+Si on fait `bump-my-version bump pre_n`, la version sera 0.2.0-dev1.
 
 # Bravo, lecture terminée
 
