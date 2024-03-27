@@ -28,6 +28,7 @@ allow_dirty = false
 commit = false
 message = "Bump version: {current_version} → {new_version}"
 commit_args = ""
+file="pyproject.toml"
 
 [tool.bumpversion.parts.pre_l]
 values = ["dev", "rc", "final"]
