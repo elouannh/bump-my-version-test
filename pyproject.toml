@@ -1,0 +1,14 @@
+[project]
+name="bump-my-version-test"
+description="Un simple projet pour tester bump-my-version-test."
+dependencies=[
+    "bump-my-version"
+]
+requires-python=">=3.11.8"
+version="0.0.1"
+
+[tool.black]
+line-length=140
+
+[tool.isort]
+profile="black"
