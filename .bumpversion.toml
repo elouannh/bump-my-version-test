@@ -1,5 +1,5 @@
 [tool.bumpversion]
-current_version = "0.2.0-dev1"
+current_version = "0.2.0-dev2"
 parse = """(?x)
     (?P<major>0|[1-9]\\d*)\\.
     (?P<minor>0|[1-9]\\d*)\\.
@@ -25,10 +25,9 @@ sign_tags = false
 tag_name = "v{new_version}"
 tag_message = "Bump version: {current_version} → {new_version}"
 allow_dirty = false
-commit = false
+commit = true
 message = "Bump version: {current_version} → {new_version}"
 commit_args = ""
-file="pyproject.toml"
 
 [tool.bumpversion.parts.pre_l]
 values = ["dev", "rc", "final"]
