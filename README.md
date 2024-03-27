@@ -67,6 +67,12 @@ values = ["dev", "rc", "final"]
 optional_value = "final"
 ```
 
+## 4. Versionner avec le pre-release en ajoutant un mot clé
+
+
+
+# Bravo, lecture terminée
+
 Normalement, tout devrait marcher (s'il manque des trucs, je rajouterai).
 
 Voir le fichier README.md pour avoir un exemple complet.

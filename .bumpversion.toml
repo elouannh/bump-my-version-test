@@ -31,4 +31,4 @@ commit_args = ""
 
 [tool.bumpversion.parts.pre_l]
 values = ["dev", "rc", "final"]
-optional_value = "final"
+optional_value = "dev"
