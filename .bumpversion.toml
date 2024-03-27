@@ -1,5 +1,5 @@
 [tool.bumpversion]
-current_version = "0.2.0-dev2"
+current_version = "0.2.0-dev3"
 parse = """(?x)
     (?P<major>0|[1-9]\\d*)\\.
     (?P<minor>0|[1-9]\\d*)\\.
@@ -33,5 +33,5 @@ commit_args = ""
 values = ["dev", "rc", "final"]
 optional_value = "dev"
 
-[[ tool.bumpversion.files ]]
+[[tool.bumpversion.files ]]
 filename = "pyproject.toml"
