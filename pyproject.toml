@@ -5,7 +5,7 @@ dependencies=[
     "bump-my-version"
 ]
 requires-python=">=3.11.8"
-version="0.0.1"
+version="0.2.0-dev2"
 
 [tool.black]
 line-length=140
